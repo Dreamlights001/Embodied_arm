@@ -1,0 +1,8 @@
+<section class="panel" id="datasets" role="tabpanel" aria-labelledby="tab-datasets">
+ <div class="sectionhead"><h2>官方数据集目录</h2><p>从 benchmark 下的链接可直接定位到数据集。这里按官方数据包、切分或发布说明列条目；同源切分、镜像与格式转换不重复加入资源或任务统计。</p></div>
+ <div class="filters"><div class="searchrow"><input id="datasetQuery" type="search" aria-label="搜索官方数据集" placeholder="搜索 LIBERO-Long、RoboTwin、装配、数据格式…"><button id="datasetReset">重置</button></div>
+ <div class="filtergrid"><label>关联来源<select id="datasetProvider"><option value="">全部来源</option></select></label><label>数据用途<select id="datasetKind"><option value="">全部用途</option></select></label><label>采集环境<select id="datasetMode"><option value="">全部环境</option></select></label><label>发布状态<select id="datasetAvailability"><option value="">全部状态</option><option value="yes">官方入口已核实</option><option value="no">公开下载待核实</option></select></label></div></div>
+ <div class="toolbar"><div id="datasetCount" aria-live="polite"></div><div class="toolbuttons"><button id="datasetCsv">导出当前数据集 CSV</button></div></div>
+ <div class="callout small" style="margin-bottom:18px"><strong>LIBERO 划分：</strong>Spatial / Object / Goal 各 10 个任务；LIBERO-100 划分为 LIBERO-90 与 LIBERO-10。此处把常称 LIBERO-Long 的 10 任务子集单列，保留官方 <code>libero_10</code> 名称。<strong>训练示范、评测配置、几何资产和人体数据各自标明用途。</strong></div>
+ <div class="dataset-list" id="datasetList"></div>
+</section>

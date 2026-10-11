@@ -1,0 +1,25 @@
+# Local caches, browser QA outputs and downloaded research pages
+__pycache__/
+*.py[cod]
+.pytest_cache/
+qa_artifacts/
+source_snapshots/
+.publish_state/
+.venv/
+venv/
+_site/
+.DS_Store
+Thumbs.db
+
+# One-time local template migrations
+add_dataset_ui.py
+revise_template.py
+update_platform_ui.py
+update_dashboard_wording.py
+
+# Local secrets and authentication files
+.env
+.env.*
+hosts.yml
+*.pem
+*.key
