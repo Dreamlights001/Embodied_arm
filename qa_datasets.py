@@ -6,7 +6,8 @@ from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parent
 D=json.loads((ROOT/'research_catalog.json').read_text(encoding='utf8'))
 ds={d['id']:d for d in D['official_datasets']};records={r['id']:r for r in D['records']}
-assert len(records)==57 and len(D['tasks'])==299 and len(D['competitions'])==24
+assert len(records)==58 and len(D['tasks'])==299 and len(D['competitions'])==24
+assert ds['data-libero-industry']['provider_id']=='libero-industry'
 assert len(ds)==len(D['official_datasets'])
 assert sum(d.get('task_count',0) for d in ds.values() if d['provider_id']=='libero')==130
 assert ds['libero-long']['task_count']==10
@@ -41,7 +42,7 @@ with sync_playwright() as p:
  page.go_forward();assert page.locator('#datasets').is_visible()
  # A restrictive dataset filter must not block a dataset anchor from elsewhere.
  page.locator('#datasetQuery').fill('does-not-exist')
- assert page.locator('.dataset-card').count()==0
+ page.wait_for_function("document.querySelectorAll('.dataset-card').length === 0")
  page.locator('[data-go="catalog"]').first.click()
  page.locator('#resetBtn').click();page.locator('#query').fill('FurnitureBench')
  page.locator('#card-furniture [data-dataset]').click()

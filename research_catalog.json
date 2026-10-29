@@ -5149,6 +5149,104 @@
       ]
     },
     {
+      "id": "libero-industry",
+      "name": "LIBERO-Industry",
+      "year": 2026,
+      "venue": "2026-10 预印本",
+      "roles": [
+        "Benchmark",
+        "Dataset"
+      ],
+      "arms": [
+        "单臂"
+      ],
+      "atomic": [
+        "A2",
+        "A3"
+      ],
+      "horizon": [
+        "长程"
+      ],
+      "operation": [
+        "直接操作"
+      ],
+      "manufacturing": "智能制造 ★★★",
+      "env": "MuJoCo / robosuite；真实 AUBO-i5H",
+      "scale": "216 个参数化任务：训练 180，评测 36",
+      "tasks": "静态到动态上料、动态到静态卸料、动态到动态转运；改变工件、速度、操作窗口和放置容差。",
+      "value": "适合研究动态上料、限时多工件转运、几何公差及工艺约束下的泛化；对照整任务成功率和目标转移完成率。",
+      "limits": "实机仅验证动态到静态工站；双臂支持仍开发中。评测的五个模型各 360 次 rollout 整任务成功率均为 0%，不代表所有工业任务或训练方法均为零。",
+      "status": "论文、代码和 HDF5 数据入口公开；未在本地运行",
+      "links": [
+        {
+          "label": "论文",
+          "url": "https://arxiv.org/abs/2610.16782"
+        },
+        {
+          "label": "代码 / 安装",
+          "url": "https://github.com/IAIE-PhysicalAI/LIBERO-Industry"
+        },
+        {
+          "label": "HDF5 数据",
+          "url": "https://huggingface.co/datasets/cindysung/LIBERO-industry-datasets"
+        },
+        {
+          "label": "平台 / 版本依据",
+          "url": "https://arxiv.org/html/2610.16782"
+        }
+      ],
+      "data": "论文实机数据 95 条示范；官方另列 LeRobot v2.1 页面，检索时显示空。",
+      "generation": "",
+      "checked": "2026-10-29",
+      "domains": [
+        "制造",
+        "物流"
+      ],
+      "source_type": "论文 / 开源项目",
+      "manufacturing_score": 3,
+      "manufacturing_reason": "工业动态上料、转运和定位，以节拍窗口与容差定义过程约束。",
+      "simulators": [
+        {
+          "engine": "MuJoCo",
+          "version": "精确版本未核实",
+          "framework": "robosuite 1.4.0（标准评测）；1.5.2（部署环境）",
+          "scope": "公开安装配置",
+          "source": "https://github.com/IAIE-PhysicalAI/LIBERO-Industry",
+          "version_status": "未核实"
+        }
+      ],
+      "real_platforms": [
+        "AUBO-i5H / CTAG2F90D"
+      ],
+      "real_support": true,
+      "real_scope": "实机动态到静态工站；双臂仍开发中",
+      "sim2real": "仿真与实机联合训练评测",
+      "platform_note": "标准 Franka 仿真与 AUBO 部署环境版本不同；论文实机只覆盖 D2S。",
+      "platform_sources": [
+        "https://arxiv.org/html/2610.16782",
+        "https://github.com/IAIE-PhysicalAI/LIBERO-Industry",
+        "https://arxiv.org/abs/2610.16782",
+        "https://huggingface.co/datasets/cindysung/LIBERO-industry-datasets"
+      ],
+      "simulator_state": "有公开仿真配置",
+      "simulator_names": [
+        "MuJoCo"
+      ],
+      "simulator_summary": "MuJoCo 精确版本未核实 / robosuite 1.4.0（标准评测）；1.5.2（部署环境）",
+      "real_platform_label": "真实平台",
+      "platform_summary": "真实平台：AUBO-i5H / CTAG2F90D；实机动态到静态工站；双臂仍开发中；sim2real：仿真与实机联合训练评测",
+      "platform_checked": "2026-10-11",
+      "official_dataset_refs": [
+        {
+          "id": "data-libero-industry",
+          "relation": "作者提供"
+        }
+      ],
+      "official_dataset_names": [
+        "LIBERO-Industry 官方 HDF5 数据"
+      ]
+    },
+    {
       "id": "robocoliseum",
       "name": "RoboColiseum",
       "year": 2026,
@@ -24774,6 +24872,63 @@
       "platform_checked": "2026-10-11"
     },
     {
+      "id": "libero-industry",
+      "name": "LIBERO-Industry",
+      "tasks": "静态到动态上料、动态到静态卸料、动态到动态转运；改变工件、速度、操作窗口和放置容差。",
+      "arms": [
+        "单臂"
+      ],
+      "atomic": [
+        "A2",
+        "A3"
+      ],
+      "horizon": [
+        "长程"
+      ],
+      "operation": [
+        "直接操作"
+      ],
+      "domains": [
+        "制造",
+        "物流"
+      ],
+      "manufacturing": "智能制造 ★★★",
+      "scale": "216 个参数化任务：训练 180，评测 36",
+      "manufacturing_score": 3,
+      "manufacturing_reason": "工业动态上料、转运和定位，以节拍窗口与容差定义过程约束。",
+      "simulators": [
+        {
+          "engine": "MuJoCo",
+          "version": "精确版本未核实",
+          "framework": "robosuite 1.4.0（标准评测）；1.5.2（部署环境）",
+          "scope": "公开安装配置",
+          "source": "https://github.com/IAIE-PhysicalAI/LIBERO-Industry",
+          "version_status": "未核实"
+        }
+      ],
+      "real_platforms": [
+        "AUBO-i5H / CTAG2F90D"
+      ],
+      "real_support": true,
+      "real_scope": "实机动态到静态工站；双臂仍开发中",
+      "sim2real": "仿真与实机联合训练评测",
+      "platform_note": "标准 Franka 仿真与 AUBO 部署环境版本不同；论文实机只覆盖 D2S。",
+      "platform_sources": [
+        "https://arxiv.org/html/2610.16782",
+        "https://github.com/IAIE-PhysicalAI/LIBERO-Industry",
+        "https://arxiv.org/abs/2610.16782",
+        "https://huggingface.co/datasets/cindysung/LIBERO-industry-datasets"
+      ],
+      "simulator_state": "有公开仿真配置",
+      "simulator_names": [
+        "MuJoCo"
+      ],
+      "simulator_summary": "MuJoCo 精确版本未核实 / robosuite 1.4.0（标准评测）；1.5.2（部署环境）",
+      "real_platform_label": "真实平台",
+      "platform_summary": "真实平台：AUBO-i5H / CTAG2F90D；实机动态到静态工站；双臂仍开发中；sim2real：仿真与实机联合训练评测",
+      "platform_checked": "2026-10-11"
+    },
+    {
       "id": "robocoliseum",
       "name": "RoboColiseum",
       "tasks": "指令选物、空间摆放、堆叠、工件倾倒、货架整理、包裹分拣、舀取和连续分拣。双臂平台不代表每个任务必须双臂。",
@@ -24838,6 +24993,12 @@
     }
   ],
   "task_coverage": [
+    {
+      "source": "LIBERO-Industry",
+      "declared": "216 参数化任务：180 训练 / 36 评测",
+      "enumerated": "未逐项枚举",
+      "status": "三种工站各 72 个条件组合；尚未逐条导入任务表，不能加入已枚举任务数。"
+    },
     {
       "source": "RoboColiseum",
       "declared": "4 榜单；28 个命名任务 / 5 类扰动",
@@ -26471,6 +26632,40 @@
       "manufacturing_score": 3,
       "manufacturing_reason": "工业件分拣、翻面与日化上料；玩具分类无制造标记，快递物流相关性较弱。",
       "simulator_summary": "MuJoCo 本届仿真分支未核实固定版本 / kuavo-ros-opensource / ROS Noetic",
+      "version_note": "关联资源的公开仿真配置；数据实际采集 / 回放版本仍需按包内元数据核对。"
+    },
+    {
+      "id": "data-libero-industry",
+      "name": "LIBERO-Industry 官方 HDF5 数据",
+      "provider_id": "libero-industry",
+      "provider_name": "LIBERO-Industry",
+      "benchmark_ids": [
+        "libero-industry"
+      ],
+      "kind": "训练示范",
+      "mode": "混合",
+      "scope": "官方 HDF5 入口；论文报告 95 条有效实机示范。LeRobot v2.1 页面检索时显示为空，格式与内容以发布页面为准。",
+      "scale": "216 个参数化任务：训练 180，评测 36",
+      "signals": "论文实机数据 95 条示范；官方另列 LeRobot v2.1 页面，检索时显示空。",
+      "available": true,
+      "status": "官方入口已核实",
+      "command": "",
+      "links": [
+        {
+          "label": "官方下载 / 数据说明",
+          "url": "https://huggingface.co/datasets/cindysung/LIBERO-industry-datasets"
+        },
+        {
+          "label": "LeRobot v2.1（当前页面为空）",
+          "url": "https://huggingface.co/datasets/cindysung/LIBERO-industry-lerobotv21-auboi5h"
+        }
+      ],
+      "source": "https://github.com/IAIE-PhysicalAI/LIBERO-Industry",
+      "checked": "2026-10-11",
+      "manufacturing": "智能制造 ★★★",
+      "manufacturing_score": 3,
+      "manufacturing_reason": "工业动态上料、转运和定位，以节拍窗口与容差定义过程约束。",
+      "simulator_summary": "MuJoCo 精确版本未核实 / robosuite 1.4.0（标准评测）；1.5.2（部署环境）",
       "version_note": "关联资源的公开仿真配置；数据实际采集 / 回放版本仍需按包内元数据核对。"
     }
   ]

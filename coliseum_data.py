@@ -4,6 +4,16 @@ import json
 from ecosystem_data import RECORDS, SURVEYS, COMPETITIONS, event, track
 from research_data import add
 
+add('libero-industry','LIBERO-Industry',2026,'2026-10 预印本','Benchmark|Dataset','单臂','A2|A3','长程','直接操作','智能制造',
+ 'MuJoCo / robosuite；真实 AUBO-i5H','216 个参数化任务：训练 180，评测 36',
+ '静态到动态上料、动态到静态卸料、动态到动态转运；改变工件、速度、操作窗口和放置容差。',
+ '适合研究动态上料、限时多工件转运、几何公差及工艺约束下的泛化；对照整任务成功率和目标转移完成率。',
+ '实机仅验证动态到静态工站；双臂支持仍开发中。评测的五个模型各 360 次 rollout 整任务成功率均为 0%，不代表所有工业任务或训练方法均为零。',
+ '论文、代码和 HDF5 数据入口公开；未在本地运行',
+ [('论文','https://arxiv.org/abs/2610.16782'),('代码 / 安装','https://github.com/IAIE-PhysicalAI/LIBERO-Industry'),('HDF5 数据','https://huggingface.co/datasets/cindysung/LIBERO-industry-datasets')],
+ '论文实机数据 95 条示范；官方另列 LeRobot v2.1 页面，检索时显示空。')
+RECORDS[-1].update(domains=['制造','物流'],source_type='论文 / 开源项目',checked='2026-10-29')
+
 REPO='https://github.com/AgibotTech/genie_sim'
 SOURCE=REPO+'/blob/main/README.md#52--genie-sim-benchmark-leaderboard'
 DEFINITIONS=json.loads((Path(__file__).resolve().parent/'task_definitions.json').read_text(encoding='utf8'))

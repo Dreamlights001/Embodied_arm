@@ -1,5 +1,7 @@
 # 机器人操作任务与评测资源
 
+2026-10-29 定向更新：纳入 LIBERO-Industry 及官方 HDF5 数据入口、仿真配置和实机边界；其 216 个参数化任务未逐条导入，不计入已枚举任务统计。原有目录其余条目仍以 2026-10-11 快照为准。同期对照 WorkBenchMark、RoCo 原论文；这些已有资源不重复计数。
+
 在线阅读：[机器人操作任务与评测资源看板](https://dreamlights001.github.io/Embodied_arm/)。
 
 直接用浏览器打开 `embodied_manufacturing_dashboard.html`。这是自包含 HTML，离线支持筛选、统计、收藏、最多四项对比、CSV/JSON 导出与完整报告打印；引用链接需联网。

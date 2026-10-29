@@ -4,6 +4,7 @@ from copy import deepcopy
 LIBERO_REPO='https://github.com/Lifelong-Robot-Learning/LIBERO'
 LIBERO_HF='https://huggingface.co/datasets/yifengzhu-hf/LIBERO-datasets'
 OVERRIDES={
+ 'libero-industry':dict(name='LIBERO-Industry 官方 HDF5 数据',mode='混合',url='https://huggingface.co/datasets/cindysung/LIBERO-industry-datasets',source='https://github.com/IAIE-PhysicalAI/LIBERO-Industry',scope='官方 HDF5 入口；论文报告 95 条有效实机示范。LeRobot v2.1 页面检索时显示为空，格式与内容以发布页面为准。',extra=[('LeRobot v2.1（当前页面为空）','https://huggingface.co/datasets/cindysung/LIBERO-industry-lerobotv21-auboi5h')]),
  'fmb':dict(name='FMB 官方操作与装配示范',kind='训练示范',mode='实机',
   url='https://functional-manipulation-benchmark.github.io/dataset/index.html',
   scope='单物体操作与多物体装配数据包；格式与文件划分见官方数据页。'),

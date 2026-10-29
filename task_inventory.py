@@ -8,6 +8,7 @@ TASKS=json.loads((Path(__file__).resolve().parent/'task_definitions.json').read_
 FAMILIES=[dict(id=r['id'],name=r['name'],tasks=r['tasks'],arms=r['arms'],atomic=r['atomic'],
  horizon=r['horizon'],operation=r['operation'],domains=r['domains'],manufacturing=r['manufacturing'],scale=r['scale']) for r in RECORDS]
 COVERAGE=[
+ dict(source='LIBERO-Industry',declared='216 参数化任务：180 训练 / 36 评测',enumerated='未逐项枚举',status='三种工站各 72 个条件组合；尚未逐条导入任务表，不能加入已枚举任务数。'),
  dict(source='RoboColiseum',declared='4 榜单；28 个命名任务 / 5 类扰动',enumerated=28,status='指令 10 + 操作 10 + 空间 8；扰动维度与 sim2real 对照实验不累加；与 Genie Sim 共源'),
  dict(source='RoboDojo · 仿真',declared='42 个评测任务',enumerated=42,status='完整（不含训练专用 DLC）'),
  dict(source='RoboDojo · 实机',declared='18 个平台-任务定义',enumerated=18,status='完整；与仿真分开计数'),

@@ -99,6 +99,9 @@ entry('rlbench', [sim('CoppeliaSim', '4.1.0', 'PyRep / RLBench 1.2.0', source=re
 entry('calvin', [sim('PyBullet', '未固定', 'calvin_env', source=ref('calvin_env_requirements'), status='未固定')])
 LIBERO = [sim('MuJoCo', '>=2.3.0；未锁精确版本', 'robosuite ==1.4.0',
           '任务环境要求 1.4.0；MuJoCo 下限来自该标签的 setup.py', ref('robosuite_140'), '版本范围')]
+entry('libero-industry', [sim('MuJoCo','精确版本未核实','robosuite 1.4.0（标准评测）；1.5.2（部署环境）',source='https://github.com/IAIE-PhysicalAI/LIBERO-Industry',status='未核实')],
+      ['AUBO-i5H / CTAG2F90D'], '实机动态到静态工站；双臂仍开发中', '仿真与实机联合训练评测',
+      '标准 Franka 仿真与 AUBO 部署环境版本不同；论文实机只覆盖 D2S。', ['https://arxiv.org/html/2610.16782','https://github.com/IAIE-PhysicalAI/LIBERO-Industry'])
 for rid, key in [('libero','libero_requirements_txt'),('liberoplus','liberoplus_requirements_txt'),('liberopro','liberopro_requirements_txt')]:
     entry(rid, LIBERO, sources=[ref(key)], note='robosuite 版本不是 MuJoCo 版本；也不套用 robosuite 1.5 的新依赖范围。')
 entry('liberovpro', [sim('MuJoCo', '具体版本未披露 / 未核实', 'LIBERO 基底', '基底来自论文；未取得可核验锁文件',
